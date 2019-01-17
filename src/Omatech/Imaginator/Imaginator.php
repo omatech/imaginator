@@ -41,6 +41,7 @@ class Imaginator {
 	
 	function getImage($id, $w=null, $h=null, $extension=null)
 	{
+		die($id);
 		$image_file=$this->test_images_array[$id];
     $this->image_handler->outputImage($image_file, ['w' => $w, 'h' => $h]);		
 	}
