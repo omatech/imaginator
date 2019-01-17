@@ -52,7 +52,7 @@ class Imaginator {
 	function getOriginal($id)
 	{
 		$image_file=$this->test_images_array[$id];
-		header("Location: ".str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->source_folder).$image_file);
+		header("Location: ".str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->source_folder).'/'.$image_file);
 		die();
 	}
 
