@@ -1,0 +1,13 @@
+{
+    "name": "omatech/imaginator",
+    "description": "Resize, optimize and cache images",
+		"minimum-stability":"dev",	
+		"autoload": {
+				"psr-4": {
+						"Omatech\\": "src/Omatech"
+				}
+    },
+    "require": {
+        "spatie/laravel-glide": "dev-master"
+    }
+}
