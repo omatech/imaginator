@@ -14,7 +14,7 @@ function get_url_size($url) {
 
 	$result = -1;
 
-	$curl = curl_init($url);
+	$curl = curl_init(str_replace('https://', 'http://', $url));
 
 	// Issue a HEAD request and follow any redirects.
 	curl_setopt($curl, CURLOPT_NOBODY, true);
