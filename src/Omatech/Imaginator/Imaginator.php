@@ -1,10 +1,12 @@
 <?php
 
 namespace Omatech\Imaginator;
+use League\Glide\ServerFactory;
 
 class Imaginator {
 
-	public $test_images_array = [];
+	private $test_images_array = [];
+	private $image_handler;
 
 	function __construct() {
 		$this->test_images_array[0] = 'SampleJPGImage_100kbmb.jpg';
@@ -27,12 +29,20 @@ class Imaginator {
 		$this->test_images_array[17] = 'SamplePNGImage_5mbmb.png';
 		$this->test_images_array[18] = 'SampleJPGImage_2mbmb.jpg';
 		$this->test_images_array[19] = 'SamplePNGImage_1mbmb.png';
+		
+		$server = League\Glide\ServerFactory::create([
+				'source' =>                  '/var/www/imaginator/original_images',
+				'cache' =>                   '/var/www/imaginator/cache_images',
+				'group_cache_in_folders' =>  true,
+				'driver' =>                  'gd',
+		]);			
+		$this->image_handler=$server;
 	}
 	
 	function getImage($id)
 	{
-		$image_url=$this->test_images_array[$id];
-		echo $image_url;
+		$image_file=$this->test_images_array[$id];
+    $this->image_handler->outputImage($image_file, ['w' => 300, 'h' => 400]);		
 	}
 
 }
