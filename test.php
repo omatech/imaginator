@@ -36,7 +36,7 @@ document.onreadystatechange = () => {
 			{
 				var iTime = performance.getEntriesByName(url)[0];
 				console.log(imgElems[i].id+' '+iTime.transferSize); //or encodedBodySize, decodedBodySize
-				document.getElementById('size-'+imgElems[i].id).innerHTML = Math.prototype(iTime.transferSize/1024,2)+'Kbs';
+				document.getElementById('size-'+imgElems[i].id).innerHTML = Math.round(iTime.transferSize/1024,2)+'Kbs';
 			}
 		}
 		
