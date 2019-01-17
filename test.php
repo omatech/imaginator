@@ -11,8 +11,16 @@ for ($i = 0; $i <= 19; $i++) {
 }
 
 function get_url_size($url) {
-	$image=file_get_contents($url);
-	return count($image);
+	$arrContextOptions = array(
+		"ssl" => array(
+			"verify_peer" => false,
+			"verify_peer_name" => false,
+		),
+	);
+
+	$response = file_get_contents($url, false, stream_context_create($arrContextOptions));
+
+	return count($response);
 }
 
 function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
