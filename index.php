@@ -12,14 +12,13 @@ require_once __DIR__.$autoload_location;
 
 $imaginator=new \Omatech\Imaginator\Imaginator();
 $url = parse_url($_SERVER['REQUEST_URI']);
-$path=$url['path'];
-$path_array=explode('/', $path);
-print_r($path_array);
-print_r($url);
-$w=$_REQUEST['w'];
-$h=$_REQUEST['h'];
+$pathparts=pathinfo($url['path']);
+$basename=$path_parts['basename'];
+$extension=$path_parts['extension'];
 echo "w=$w<br>";
 echo "h=$h<br>";
+echo "pathname=$pathname<br>";
+echo "extension=$extension<br>";
 die;
 $imaginator->getImage(4);
 
