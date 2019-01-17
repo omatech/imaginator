@@ -11,5 +11,6 @@ while (!is_file(__DIR__.$autoload_location))
 require_once __DIR__.$autoload_location;
 
 $imaginator=new \Omatech\Imaginator\Imaginator();
+$imaginator->getImage(4);
 
 
