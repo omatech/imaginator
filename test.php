@@ -23,7 +23,7 @@ function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = nul
 <script language="text/javascript">
 	if (document.readyState === 'complete') {
 		// The page is fully loaded
-
+alert('hola');
 		var imgElems = document.getElementsByTagName('img');
 		for (var i = 0, len = imgElems.length; i < len; i++)
 		{
