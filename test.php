@@ -1,7 +1,7 @@
 <?php
 $url_base='https://imaginator.omatech.com';
 
-foreach (range(0,19) as $i)
+for ($i = 0; $i <= 19; $i++) {
 {
 	paint_image_line($url_base, $i, 'jpg', 300);
 	paint_image_line($url_base, $i, 'webp', 900, null, 98);
@@ -27,7 +27,9 @@ function get_url_size ($url)
 
 function paint_image_line($url_base, $id, $extension='jpg', $w=300, $h=null, $q=100)
 {
-	$url="$url_base/$i.$extension?w=$w&h=$h&q=95";
+	$url="$url_base/$id.$extension?w=$w&h=$h&q=$q";
 	echo "<img src='$url'> Width: $w Height: $h Quality: $q Format: $extension Size:". get_url_size($url);
   echo "$url <br>";	
 }
+
+

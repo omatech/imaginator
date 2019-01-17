@@ -7,8 +7,12 @@ class Imaginator {
 
 	private $test_images_array = [];
 	private $image_handler;
+	private $source_folder;
+	private $cache_folder;
 
 	function __construct($source_folder, $cache_folder) {
+		$this->source_folder=$source_folder;
+		$this->cache_folder=$cache_folder;
 		$this->test_images_array[0] = 'SampleJPGImage_100kbmb.jpg';
 		$this->test_images_array[1] = 'SampleJPGImage_30mbmb.jpg';
 		$this->test_images_array[2] = 'SamplePNGImage_200kbmb.png';
@@ -31,8 +35,8 @@ class Imaginator {
 		$this->test_images_array[19] = 'SamplePNGImage_1mbmb.png';
 		
 		$server = ServerFactory::create([
-				'source' =>                  $source_folder,
-				'cache' =>                   $cache_folder,
+				'source' =>                  $this->source_folder,
+				'cache' =>                   $this->cache_folder,
 				'group_cache_in_folders' =>  true,
 				'driver' =>                  'gd',
 		]);			
@@ -43,6 +47,13 @@ class Imaginator {
 	{
 		$image_file=$this->test_images_array[$id];
     $this->image_handler->outputImage($image_file, ['w' => $w, 'h' => $h, 'fm'=>$extension, 'q'=>$q]);		
+	}
+	
+	function getOriginal($id)
+	{
+		$image_file=$this->test_images_array[$id];
+		header("Location: ".str_replace($_SERVER['DOCUMENT_ROOT'], '', $this->source_folder).$image_file);
+		die();
 	}
 
 }
