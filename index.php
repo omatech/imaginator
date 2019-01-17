@@ -17,6 +17,7 @@ $url = parse_url($_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($url['path']);
 $filename=$pathparts['filename'];
 $extension=$pathparts['extension'];
+$q=98;
 if(isset($_REQUEST['w'])) $w=$_REQUEST['w'];
 if(isset($_REQUEST['h'])) $h=$_REQUEST['h'];
 if(isset($_REQUEST['q'])) $q=$_REQUEST['q'];
@@ -30,15 +31,15 @@ echo "filename=$filename<br>";
 echo "extension=$extension<br>";
 echo "q=$q<br>";
 */
-if (is_numeric($filename))
+if (is_numeric($filename) && is_numeric($q))
 {
-	if ($filename>=0 && $filename<20)
+	if ($filename>=0 && $filename<20 && $q>=1 && $q<=100)
 	{
 		$imaginator->getImage($filename, $w, $h, $extension, $q);
 		die;
 	}
 }
-die("Please input a number between 0 and 19 as filename\n");
+die("Please input a number between 0 and 19 as filename and a number between 1 and 100 for quality\n");
 
 
 
