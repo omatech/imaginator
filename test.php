@@ -8,11 +8,11 @@ $url_base = 'https://imaginator.omatech.com';
 
 $global_id=0;
 for ($i = 0; $i <= 19; $i++) {
-	paint_image_line($url_base, $i, $global_id, 'jpg', 300);
-	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 98);
-	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 50);
-	paint_image_line($url_base, $i, $global_id, 'gif', 800);
-	paint_image_line($url_base, $i, $global_id, 'jpg', 600, 500, 70);
+	paint_image_line($url_base, $i, $global_id, 'jpg', 300);$global_id++;
+	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 98);$global_id++;
+	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 50);$global_id++;
+	paint_image_line($url_base, $i, $global_id, 'gif', 800);$global_id++;
+	paint_image_line($url_base, $i, $global_id, 'jpg', 600, 500, 70);$global_id++;
 }
 
 function paint_image_line($url_base, $id, $global_id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
