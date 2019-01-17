@@ -13,7 +13,6 @@ require_once __DIR__.$autoload_location;
 $imaginator=new \Omatech\Imaginator\Imaginator();
 $url = parse_url($_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($url['path']);
-print_r($pathparts);
 $filename=$pathparts['filename'];
 $extension=$pathparts['extension'];
 $w=$_REQUEST['w'];
