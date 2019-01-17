@@ -8,6 +8,7 @@
 				}
     },
     "require": {
-        "spatie/laravel-glide": "dev-master"
+        "spatie/laravel-glide": "dev-master",
+				"php": ">=7.0 <7.3"
     }
 }
