@@ -14,8 +14,8 @@ $imaginator=new \Omatech\Imaginator\Imaginator();
 $url = parse_url($_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($url['path']);
 print_r($pathparts);
-$filename=$path_parts['filename'];
-$extension=$path_parts['extension'];
+$filename=$pathparts['filename'];
+$extension=$pathparts['extension'];
 $w=$_REQUEST['w'];
 $h=$_REQUEST['h'];
 
