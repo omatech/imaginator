@@ -10,6 +10,7 @@ https://imaginator.omatech.com/test.php
 
 There are 20 hardcoded images in an array, you can play with the ids (0 to 19) to try transformations
 
+```
 0: SampleJPGImage_100kbmb.jpg
 1: SampleJPGImage_30mbmb.jpg
 2: SamplePNGImage_200kbmb.png
@@ -30,26 +31,27 @@ There are 20 hardcoded images in an array, you can play with the ids (0 to 19) t
 17: SamplePNGImage_5mbmb.png
 18: SampleJPGImage_2mbmb.jpg
 19: SamplePNGImage_1mbmb.png
+```
 
 ## Sample urls
 
 Image: 5 Width: 300 Height: Quality: 100 Format: jpg Size:49Kbs 
-https://imaginator.omatech.com/5.jpg?w=300&h=&q=100 
+[https://imaginator.omatech.com/5.jpg?w=300&h=&q=100](https://imaginator.omatech.com/5.jpg?w=300&h=&q=100) 
 
 Image: 5 Width: 900 Height: Quality: 98 Format: webp Size:124Kbs 
-https://imaginator.omatech.com/5.webp?w=900&h=&q=98 
+[https://imaginator.omatech.com/5.webp?w=900&h=&q=98](https://imaginator.omatech.com/5.webp?w=900&h=&q=98) 
 
 Image: 6 Width: 300 Height: Quality: 100 Format: jpg Size:146Kbs 
-https://imaginator.omatech.com/6.jpg?w=300&h=&q=100 
+[https://imaginator.omatech.com/6.jpg?w=300&h=&q=100](https://imaginator.omatech.com/6.jpg?w=300&h=&q=100) 
 
 Image: 6 Width: 900 Height: Quality: 50 Format: webp Size:117Kbs 
-https://imaginator.omatech.com/6.webp?w=900&h=&q=50 
+[https://imaginator.omatech.com/6.webp?w=900&h=&q=50](https://imaginator.omatech.com/6.webp?w=900&h=&q=50) 
 
 Image: 11 Width: 600 Height: 500 Quality: 70 Format: jpg Size:22Kbs 
-https://imaginator.omatech.com/11.jpg?w=600&h=500&q=70 
+[https://imaginator.omatech.com/11.jpg?w=600&h=500&q=70](https://imaginator.omatech.com/11.jpg?w=600&h=500&q=70) 
 
 Image: 11 Width: 800 Height: Quality: 100 Format: gif Size:210Kbs 
-https://imaginator.omatech.com/11.gif?w=800&h=&q=100 
+[https://imaginator.omatech.com/11.gif?w=800&h=&q=100](https://imaginator.omatech.com/11.gif?w=800&h=&q=100)
 
 ## Original files url
 
