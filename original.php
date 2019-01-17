@@ -14,8 +14,7 @@ $source_folder=$_SERVER["DOCUMENT_ROOT"].'/original_images';
 $cache_folder=$_SERVER["DOCUMENT_ROOT"].'/cache_images';
 $imaginator=new \Omatech\Imaginator\Imaginator($source_folder, $cache_folder);
 $parts=explode('/', $_SERVER['REQUEST_URI']);
-print_r($parts);
-$pathparts=pathinfo($url['path']);
+$pathparts=pathinfo($parts[2]);
 $filename=$pathparts['filename'];
 
 if (is_numeric($filename) && is_numeric($q))
