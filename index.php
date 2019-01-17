@@ -32,7 +32,7 @@ echo "q=$q<br>";
 */
 if (is_numeric($filename))
 {
-	if ($filename>00 && $filename<20)
+	if ($filename>=0 && $filename<20)
 	{
 		$imaginator->getImage($filename, $w, $h, $extension, $q);
 		die;
