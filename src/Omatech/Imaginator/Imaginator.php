@@ -1,7 +1,7 @@
 <?php
 
 namespace Omatech\Imaginator;
-use League\Glide\ServerFactory;
+use \League\Glide\ServerFactory;
 
 class Imaginator {
 
