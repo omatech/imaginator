@@ -30,7 +30,7 @@ class Imaginator {
 		$this->test_images_array[18] = 'SampleJPGImage_2mbmb.jpg';
 		$this->test_images_array[19] = 'SamplePNGImage_1mbmb.png';
 		
-		$server = League\Glide\ServerFactory::create([
+		$server = ServerFactory::create([
 				'source' =>                  '/var/www/imaginator/original_images',
 				'cache' =>                   '/var/www/imaginator/cache_images',
 				'group_cache_in_folders' =>  true,
