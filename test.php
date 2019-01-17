@@ -1,5 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
-
 use \League\Glide\ServerFactory;
 
 $url_base = 'https://imaginator.omatech.com';
@@ -20,7 +22,7 @@ function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = nul
 }
 ?>
 
-<script language="text/javascript">
+<script>
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
     // document ready
@@ -41,3 +43,6 @@ alert('hola');
   }
 };
 </script>
+
+</body>
+</html>
