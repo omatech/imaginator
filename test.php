@@ -17,5 +17,5 @@ function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = nul
 	$url = "$url_base/$id.$extension?w=$w&h=$h&q=$q";
 	echo "<img src='$url'><br>";
 	echo "Width: $w Height: $h Quality: $q Format: $extension Size:?<br>";
-	echo "$url <br>";
+	echo "$url <br><br>";
 }
