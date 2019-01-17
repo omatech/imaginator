@@ -1,7 +1,7 @@
 <?php
 $url_base='https://imaginator.omatech.com';
 
-for ($i = 0; $i <= 19; $i++) {
+for ($i = 0; $i <= 19; $i++) 
 {
 	paint_image_line($url_base, $i, 'jpg', 300);
 	paint_image_line($url_base, $i, 'webp', 900, null, 98);
