@@ -1,5 +1,7 @@
 <?php
 
+use \League\Glide\ServerFactory;
+
 $url_base = 'https://imaginator.omatech.com';
 
 for ($i = 0; $i <= 19; $i++) {
@@ -10,16 +12,9 @@ for ($i = 0; $i <= 19; $i++) {
 	paint_image_line($url_base, $i, 'jpg', 600, 500, 70);
 }
 
-function get_url_size($url) {
-
-  $url= str_replace('https://', 'http://', $url);
-	$response = file_get_contents($url, false, stream_context_create($arrContextOptions));
-
-	return count($response);
-}
 
 function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
 	$url = "$url_base/$id.$extension?w=$w&h=$h&q=$q";
-	echo "<img src='$url'> Width: $w Height: $h Quality: $q Format: $extension Size:" . get_url_size($url);
+	echo "<img src='$url'> Width: $w Height: $h Quality: $q Format: $extension Size:?";
 	echo "$url <br>";
 }
