@@ -1,8 +1,8 @@
 <?php
-$url_base='https://imaginator.omatech.com';
 
-for ($i = 0; $i <= 19; $i++) 
-{
+$url_base = 'https://imaginator.omatech.com';
+
+for ($i = 0; $i <= 19; $i++) {
 	paint_image_line($url_base, $i, 'jpg', 300);
 	paint_image_line($url_base, $i, 'webp', 900, null, 98);
 	paint_image_line($url_base, $i, 'webp', 900, null, 50);
@@ -10,26 +10,13 @@ for ($i = 0; $i <= 19; $i++)
 	paint_image_line($url_base, $i, 'jpg', 600, 500, 70);
 }
 
-function get_url_size ($url)
-{
-	$ch = curl_init($url);
-
- curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
- curl_setopt($ch, CURLOPT_HEADER, TRUE);
- curl_setopt($ch, CURLOPT_NOBODY, TRUE);
-
- $data = curl_exec($ch);
- $size = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
-
- curl_close($ch);
- return $size;
+function get_url_size($url) {
+	$image=file_get_contents($url);
+	return count($image);
 }
 
-function paint_image_line($url_base, $id, $extension='jpg', $w=300, $h=null, $q=100)
-{
-	$url="$url_base/$id.$extension?w=$w&h=$h&q=$q";
-	echo "<img src='$url'> Width: $w Height: $h Quality: $q Format: $extension Size:". get_url_size($url);
-  echo "$url <br>";	
+function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
+	$url = "$url_base/$id.$extension?w=$w&h=$h&q=$q";
+	echo "<img src='$url'> Width: $w Height: $h Quality: $q Format: $extension Size:" . get_url_size($url);
+	echo "$url <br>";
 }
-
-
