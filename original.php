@@ -14,6 +14,7 @@ $source_folder=$_SERVER["DOCUMENT_ROOT"].'/original_images';
 $cache_folder=$_SERVER["DOCUMENT_ROOT"].'/cache_images';
 $imaginator=new \Omatech\Imaginator\Imaginator($source_folder, $cache_folder);
 $url = parse_url($_SERVER['REQUEST_URI']);
+print_r($url);
 $pathparts=pathinfo($url['path']);
 $filename=$pathparts['filename'];
 
