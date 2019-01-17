@@ -12,7 +12,6 @@ require_once __DIR__.$autoload_location;
 
 $source_folder=$_SERVER["DOCUMENT_ROOT"].'/original_images';
 $cache_folder=$_SERVER["DOCUMENT_ROOT"].'/cache_images';
-echo $source_folder;die;
 $imaginator=new \Omatech\Imaginator\Imaginator($source_folder, $cache_folder);
 $url = parse_url($_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($url['path']);
@@ -23,6 +22,8 @@ if(isset($_REQUEST['h'])) $h=$_REQUEST['h'];
 if(isset($_REQUEST['q'])) $q=$_REQUEST['q'];
 
 /* debug
+echo "source_folder=$source_folder<br>";
+echo "cache_folder=$cache_folder<br>";
 echo "w=$w<br>";
 echo "h=$h<br>";
 echo "filename=$filename<br>";
