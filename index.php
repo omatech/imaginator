@@ -10,7 +10,10 @@ while (!is_file(__DIR__.$autoload_location))
 }
 require_once __DIR__.$autoload_location;
 
-$imaginator=new \Omatech\Imaginator\Imaginator();
+$source_folder=$_SERVER["DOCUMENT_ROOT"].'/original_images';
+$cache_folder=$_SERVER["DOCUMENT_ROOT"].'/cache_images';
+echo $source_folder;die;
+$imaginator=new \Omatech\Imaginator\Imaginator($source_folder, $cache_folder);
 $url = parse_url($_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($url['path']);
 $filename=$pathparts['filename'];

@@ -8,7 +8,7 @@ class Imaginator {
 	private $test_images_array = [];
 	private $image_handler;
 
-	function __construct() {
+	function __construct($source_folder, $cache_folder) {
 		$this->test_images_array[0] = 'SampleJPGImage_100kbmb.jpg';
 		$this->test_images_array[1] = 'SampleJPGImage_30mbmb.jpg';
 		$this->test_images_array[2] = 'SamplePNGImage_200kbmb.png';
@@ -31,8 +31,8 @@ class Imaginator {
 		$this->test_images_array[19] = 'SamplePNGImage_1mbmb.png';
 		
 		$server = ServerFactory::create([
-				'source' =>                  '/var/www/imaginator/original_images',
-				'cache' =>                   '/var/www/imaginator/cache_images',
+				'source' =>                  $source_folder,
+				'cache' =>                   $cache_folder,
 				'group_cache_in_folders' =>  true,
 				'driver' =>                  'gd',
 		]);			
