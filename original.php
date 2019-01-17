@@ -10,6 +10,7 @@ while (!is_file(__DIR__.$autoload_location))
 }
 require_once __DIR__.$autoload_location;
 
+$q=100;
 $source_folder=$_SERVER["DOCUMENT_ROOT"].'/original_images';
 $cache_folder=$_SERVER["DOCUMENT_ROOT"].'/cache_images';
 $imaginator=new \Omatech\Imaginator\Imaginator($source_folder, $cache_folder);
