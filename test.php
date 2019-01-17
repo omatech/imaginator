@@ -12,10 +12,27 @@ for ($i = 0; $i <= 19; $i++) {
 	paint_image_line($url_base, $i, 'jpg', 600, 500, 70);
 }
 
-
 function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
 	$url = "$url_base/$id.$extension?w=$w&h=$h&q=$q";
 	echo "<img src='$url'><br>";
 	echo "Width: $w Height: $h Quality: $q Format: $extension Size:?<br>";
 	echo "$url <br><br>";
 }
+?>
+
+<script language="text/javascript">
+	if (document.readyState === 'complete') {
+		// The page is fully loaded
+
+		var imgElems = document.getElementsByTagName('img');
+		for (var i = 0, len = imgElems.length; i < len; i++)
+		{
+			var url = imgElems[i].src || imgElems[i].href;
+			if (url && url.length > 0)
+			{
+				var iTime = performance.getEntriesByName(url)[0];
+				console.log(iTime.transferSize); //or encodedBodySize, decodedBodySize
+			}
+		}
+	}
+</script>
