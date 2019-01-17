@@ -1,6 +1,6 @@
 <?php
 
-namespace \Omatech\Imaginator;
+namespace Omatech\Imaginator;
 
 class Imaginator {
 	
