@@ -11,13 +11,8 @@ for ($i = 0; $i <= 19; $i++) {
 }
 
 function get_url_size($url) {
-	$arrContextOptions = array(
-		"ssl" => array(
-			"verify_peer" => false,
-			"verify_peer_name" => false,
-		),
-	);
 
+  $url= str_replace('https://', 'http://', $url);
 	$response = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
 	return count($response);
