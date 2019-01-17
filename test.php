@@ -8,7 +8,8 @@ $url_base = 'https://imaginator.omatech.com';
 
 $global_id=0;
 for ($i = 0; $i <= 19; $i++) {
-	echo "<img width='600' src='/original.php/$i.jpg' id='$i-original'>OriginalSize:<span id='size-$i-original'></span><br>";	
+	$original_path="/original.php/$i";
+	echo "$url_base$original_path<br>OriginalSize:<span id='size-$i-original'></span><br><img width='600' src='$url_base$original_path' id='$i-original'><br>";	
 	paint_image_line($url_base, $i, $global_id, 'jpg', 300);$global_id++;
 	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 98);$global_id++;
 	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 50);$global_id++;
