@@ -8,7 +8,7 @@ $url_base = 'https://imaginator.omatech.com';
 
 $global_id=0;
 for ($i = 0; $i <= 19; $i++) {
-	echo "<img width='600' src='/original.php/$i.jpg' id='$i-original'><br>";	
+	echo "<img width='600' src='/original.php/$i.jpg' id='$i-original'>OriginalSize:<span id='size-$i-original'></span><br>";	
 	paint_image_line($url_base, $i, $global_id, 'jpg', 300);$global_id++;
 	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 98);$global_id++;
 	paint_image_line($url_base, $i, $global_id, 'webp', 900, null, 50);$global_id++;
@@ -19,7 +19,7 @@ for ($i = 0; $i <= 19; $i++) {
 function paint_image_line($url_base, $id, $global_id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
 	$url = "$url_base/$id.$extension?w=$w&h=$h&q=$q";
 	echo "<img src='$url' id='$global_id'><br>";
-	echo "Width: $w Height: $h Quality: $q Format: $extension Size:<span id='size-$global_id'></span> OriginalSize:<span id='size-$id-original'></span><br>";
+	echo "Width: $w Height: $h Quality: $q Format: $extension Size:<span id='size-$global_id'></span> <br>";
 
 	echo "$url <br><br>";
 }
