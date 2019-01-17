@@ -20,7 +20,7 @@ fputs($fo, "Host: imaginator.omatech.com\r\n");
 fputs($fo, "Referer: http://www.omatech.com.com\r\n");
 fputs($fo, "User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)\r\n\r\n");
 echo "Error $errno: $errstr<br />";
-return coun($fo);
+return count($fo);
 	/*
 	$arrContextOptions = array(
 		"ssl" => array(
