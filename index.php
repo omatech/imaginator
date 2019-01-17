@@ -30,7 +30,15 @@ echo "filename=$filename<br>";
 echo "extension=$extension<br>";
 echo "q=$q<br>";
 */
+if (is_numeric($filename))
+{
+	if ($filename>00 && $filename<20)
+	{
+		$imaginator->getImage($filename, $w, $h, $extension, $q);
+		die;
+	}
+}
+die("Please input a number between 0 and 19 as filename\n");
 
-$imaginator->getImage($filename, $w, $h, $extension, $q);
 
 
