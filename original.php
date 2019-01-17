@@ -17,7 +17,7 @@ $imaginator=new \Omatech\Imaginator\Imaginator($source_folder, $cache_folder);
 $parts=explode('/', $_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($parts[2]);
 $filename=$pathparts['filename'];
-
+echo $q.'.'.$filename;
 if (is_numeric($filename) && is_numeric($q))
 {
 	if ($filename>=0 && $filename<20 && $q>=1 && $q<=100)
