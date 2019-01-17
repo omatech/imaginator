@@ -24,6 +24,7 @@ echo "w=$w<br>";
 echo "h=$h<br>";
 echo "filename=$filename<br>";
 echo "extension=$extension<br>";
+echo "q=$q<br>";
 */
 
 $imaginator->getImage($filename, $w, $h, $extension, $q);
