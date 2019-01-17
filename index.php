@@ -15,8 +15,9 @@ $url = parse_url($_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($url['path']);
 $filename=$pathparts['filename'];
 $extension=$pathparts['extension'];
-$w=$_REQUEST['w'];
-$h=$_REQUEST['h'];
+if(isset($_REQUEST['w'])) $w=$_REQUEST['w'];
+if(isset($_REQUEST['h'])) $h=$_REQUEST['h'];
+if(isset($_REQUEST['q'])) $q=$_REQUEST['q'];
 
 /* debug
 echo "w=$w<br>";
@@ -25,6 +26,6 @@ echo "filename=$filename<br>";
 echo "extension=$extension<br>";
 */
 
-$imaginator->getImage($filename, $w, $h, $extension);
+$imaginator->getImage($filename, $w, $h, $extension, $q);
 
 
