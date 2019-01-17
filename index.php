@@ -14,14 +14,14 @@ $imaginator=new \Omatech\Imaginator\Imaginator();
 $url = parse_url($_SERVER['REQUEST_URI']);
 $pathparts=pathinfo($url['path']);
 print_r($pathparts);
-$basename=$path_parts['basename'];
+$filename=$path_parts['filename'];
 $extension=$path_parts['extension'];
 $w=$_REQUEST['w'];
 $h=$_REQUEST['h'];
 
 echo "w=$w<br>";
 echo "h=$h<br>";
-echo "pathname=$pathname<br>";
+echo "filename=$filename<br>";
 echo "extension=$extension<br>";
 die;
 $imaginator->getImage(4);
