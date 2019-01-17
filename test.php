@@ -18,7 +18,7 @@ for ($i = 0; $i <= 19; $i++) {
 function paint_image_line($url_base, $id, $global_id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
 	$url = "$url_base/$id.$extension?w=$w&h=$h&q=$q";
 	echo "<img src='$url' id='$global_id'><br>";
-	echo "Width: $w Height: $h Quality: $q Format: $extension Size:<span id='size-$global_id'/><br>";
+	echo "Width: $w Height: $h Quality: $q Format: $extension Size:<span id='size-$global_id'></span><br>";
 	echo "$url <br><br>";
 }
 ?>
