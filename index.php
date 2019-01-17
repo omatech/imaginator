@@ -19,11 +19,13 @@ $extension=$pathparts['extension'];
 $w=$_REQUEST['w'];
 $h=$_REQUEST['h'];
 
+/* debug
 echo "w=$w<br>";
 echo "h=$h<br>";
 echo "filename=$filename<br>";
 echo "extension=$extension<br>";
-die;
-$imaginator->getImage(4);
+*/
+
+$imaginator->getImage($filename, $w, $h, $extension);
 
 

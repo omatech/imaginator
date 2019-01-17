@@ -39,10 +39,10 @@ class Imaginator {
 		$this->image_handler=$server;
 	}
 	
-	function getImage($id)
+	function getImage($id, $w=null, $h=null, $extension=null)
 	{
 		$image_file=$this->test_images_array[$id];
-    $this->image_handler->outputImage($image_file, ['w' => 300, 'h' => 400]);		
+    $this->image_handler->outputImage($image_file, ['w' => $w, 'h' => $h]);		
 	}
 
 }
