@@ -11,16 +11,42 @@ for ($i = 0; $i <= 19; $i++) {
 }
 
 function get_url_size($url) {
-	$arrContextOptions = array(
-		"ssl" => array(
-			"verify_peer" => false,
-			"verify_peer_name" => false,
-		),
-	);
 
-	$response = file_get_contents($url, false, stream_context_create($arrContextOptions));
+	$result = -1;
 
-	return count($response);
+	$curl = curl_init($url);
+
+	// Issue a HEAD request and follow any redirects.
+	curl_setopt($curl, CURLOPT_NOBODY, true);
+	curl_setopt($curl, CURLOPT_HEADER, true);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($curl, CURLOPT_USERAGENT, get_user_agent_string());
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+
+	$data = curl_exec($curl);
+	curl_close($curl);
+
+	if ($data) {
+		$content_length = "unknown";
+		$status = "unknown";
+
+		if (preg_match("/^HTTP\/1\.[01] (\d\d\d)/", $data, $matches)) {
+			$status = (int) $matches[1];
+		}
+
+		if (preg_match("/Content-Length: (\d+)/", $data, $matches)) {
+			$content_length = (int) $matches[1];
+		}
+
+		// http://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+		if ($status == 200 || ($status > 300 && $status <= 308)) {
+			$result = $content_length;
+		}
+	}
+
+	return $result;
 }
 
 function paint_image_line($url_base, $id, $extension = 'jpg', $w = 300, $h = null, $q = 100) {
