@@ -36,11 +36,19 @@ if (is_numeric($filename) && is_numeric($q))
 	if ($filename>=0 && $filename<20 && $q>=1 && $q<=100)
 	{
 
+		if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) 
+		{// send the last mod time of the file back
+   			header('Last-Modified: '.gmdate('D, d M Y H:i:s', strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])).' GMT', true, 304);
+   			exit;
+ 		}		
+
 		$timestamp=time();
 		$tsstring = gmdate('D, d M Y H:i:s ', $timestamp) . 'GMT';
 		$etag = $filename . $timestamp;
 		header("Last-Modified: $tsstring");
 		header("ETag: \"{$etag}\"");
+
+
 
 		$imaginator->getImage($filename, $w, $h, $extension, $q);
 		die;
